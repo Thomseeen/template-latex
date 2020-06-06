@@ -1,0 +1,81 @@
+%% ---------------------------------------------------------------------------
+% LaTeX-Vorlage 2020 - Wagner Thomas
+%% ---------------------------------------------------------------------------
+\input{settings-header}
+%% ---------------------------------------------------------------------------
+\begin{document}
+% Trennungsvorgaben
+\input{dicts/hypenation}
+%% Einleitungsseiten
+\pagenumbering{roman}
+%% ----------------------------------------------------------------------------
+% Titelseite
+\pagestyle{empty}
+\begin{titlepage}
+	\includegraphics[width=1\textwidth]{figures/hska-eit-header-logo.pdf}
+	
+	\vspace{1cm}	
+	
+	\begin{center}
+		\Large{Hochschule Karlsruhe - Technik und Wirtschaft}\\
+		\Large{Fakultät für Elektro- und Informationstechnik}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textbf{\huge{Beispielarbeit}}\\
+		\vspace{0.5cm}
+		\textbf{\LARGE{Abgefahrener Titel}}\\
+		\vspace{1cm}
+		\large{von}\\
+		\textbf{\large{Max ...}}\\
+	\end{center}
+\end{titlepage}
+\newpage
+%% ----------------------------------------------------------------------------
+
+%% Verzeichnisse 1
+% Inhaltsverzeichnis
+\tableofcontents
+%\settocfeature{entryhook}{\rmfamily}
+\newpage
+%% ----------------------------------------------------------------------------
+
+%% Hauptteil
+\pagenumbering{arabic}
+\pagestyle{headings}
+
+\input{chapters/chapter1}
+\clearpage
+
+%% ----------------------------------------------------------------------------
+%% Verzeichnisse 2
+% Literatur listen, die nicht explizit zitiert wurde aber ins Verzeichnis soll
+%\nocite{BLABLA}
+% Literaturverzeichnis
+\twocolumn
+\addcontentsline{toc}{section}{Literatur}
+\bibliography{dicts/sources}
+\bibliographystyle{ieeetr}
+\onecolumn
+\newpage
+% Abbildungsverzeichnis
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+%\newpage
+% Tabellenverzeichnis
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables
+\newpage
+% Abkürzungsverzeichnis
+\section*{Abkürzungsverzeichnis} 						% ohne Nummerierung
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}	% trotzdem ins Inhaltsverzeichnis
+\markright{Abkürzungsverzeichnis}						% trotzdem in die Kopfzeile
+\begin{acronym}[Bash]
+	\input{dicts/abbreviations}
+\end{acronym}
+%% ----------------------------------------------------------------------------
+
+\end{document}
+% ----------------------------------------------------------------------------

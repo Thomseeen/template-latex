@@ -1,0 +1,81 @@
+\documentclass[a4paper, 12pt, headsepline]{scrreprt}
+
+
+%% ***** Preamble *****
+%% ---------------------------------------------------------------------------
+%% Hauptpakete packages
+\usepackage[english, ngerman]{babel} 		% Deutsche typogr. Regeln + Trenntabelle
+\usepackage[T1]{fontenc}             		% Interner TeX-Font-Codierung
+\usepackage{lmodern}                 		% Font Latin Modern
+\usepackage[utf8]{inputenc}          		% Font-Codierung der Eingabedatei
+\usepackage[babel, german=quotes]{csquotes}	% Anführungszeichen
+\usepackage{graphicx}                		% Grafiken
+\usepackage{booktabs}                		% Tabellen schöner
+\usepackage{longtable}						% Tabellen über mehrere Seiten
+\usepackage{multirow}						% Multirow Tabellen
+\usepackage{makecell}						% Um Padding innerhalb einer Zelle zu erlauben
+\setcellgapes{10pt}							% - padding um x
+\usepackage{listingsutf8}					% Listings mit Einstellungen
+\usepackage{blindtext}						% Generierung von Blindtext
+\lstset{basicstyle=\small\ttfamily,
+	tabsize=2,
+	basewidth={0.5em,0.45em},
+	extendedchars=true}
+\usepackage{amsmath}	               		% Mathematik
+\usepackage[pdftex]{hyperref}       
+\hypersetup{
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	colorlinks,
+	citecolor=blue,
+	linkcolor=blue,
+}
+\usepackage{scrhack}						% Unterdrückt Fehlermeldung von listings
+\usepackage{subfigure}						% Abbildungen mit Unterabbildungen
+\usepackage{caption}						% Anpassbare Captions
+\usepackage{indentfirst}					% Nach Überschrift auch Einrücken
+%% ---------------------------------------------------------------------------
+%% Kopfzeile mit Section und Subsection
+%\usepackage{titleps}
+%\usepackage{scrlayer-scrpage}
+%\lohead{\thesection. \sectiontitle}
+%\rohead{\thesubsection. \rightmark}
+%% ---------------------------------------------------------------------------
+%% Verzeichnisse
+\usepackage[nohyperlinks, printonlyused]{acronym}			% Für Abkürzungsverzeichnis
+%% ---------------------------------------------------------------------------
+%% BibTeX
+\usepackage{cite}
+\def\BibTeX{Bib}
+%% ---------------------------------------------------------------------------
+%% Nummerierungstiefen
+\setcounter{tocdepth}{3}             		% 3 Stufen im Inhaltsverzeichnis
+\setcounter{secnumdepth}{3} 		 		% 3 Stufen in Abschnittnummerierung
+%% ---------------------------------------------------------------------------
+%% Form
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+% Packet für Seitenrandabstände und Einstellung für Seitenränder
+%\usepackage{geometry}
+%\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm} % aus Word
+%% ---------------------------------------------------------------------------
+%% Quelltext
+%\usepackage{color}
+%\definecolor{light-gray}{gray}{0.95}
+%\usepackage{listings} 
+%\lstset{
+%	numbers=left, 
+%	numberstyle=\tiny, 
+%	breaklines=true,
+%	backgroundcolor=\color{light-gray},
+%	numbersep=5pt
+%}
+%% ---------------------------------------------------------------------------
+%% Sonder Gedöns
+% Macro für die "schöne" Darstellung von C#
+\newcommand{\Csharp}{
+	{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+%% ---------------------------------------------------------------------------
