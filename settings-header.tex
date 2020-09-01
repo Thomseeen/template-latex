@@ -1,5 +1,4 @@
-\documentclass[a4paper, 12pt, headsepline]{scrreprt}
-
+\documentclass[a4paper, 12pt, headsepline]{scrbook}
 
 %% ***** Preamble *****
 %% ---------------------------------------------------------------------------
@@ -17,6 +16,12 @@
 \setcellgapes{10pt}							% - padding um x
 \usepackage{listingsutf8}					% Listings mit Einstellungen
 \usepackage{blindtext}						% Generierung von Blindtext
+\usepackage[hyphens]{url}					% Lade URL Package mit explizitem Umbruch bei "-" und fuer \path
+\usepackage{booktabs}						% Fuer Tabellen von tablesgenerator.com
+\usepackage{graphicx}						% Fuer Tabellen von tablesgenerator.com
+\usepackage[table,xcdraw]{xcolor}			% Fuer Tabellen von tablesgenerator.com
+\usepackage[binary-units=true]{siunitx}		% Huebsche Einheiten
+\sisetup{locale = DE}						% Huebsche Einheiten
 \lstset{basicstyle=\small\ttfamily,
 	tabsize=2,
 	basewidth={0.5em,0.45em},
@@ -26,9 +31,9 @@
 \hypersetup{
 	bookmarksopen=true,
 	bookmarksopenlevel=3,
-	colorlinks,
-	citecolor=blue,
-	linkcolor=blue,
+	%colorlinks,
+	%citecolor=blue,
+	%linkcolor=blue,
 }
 \usepackage{scrhack}						% Unterdrückt Fehlermeldung von listings
 \usepackage{subfigure}						% Abbildungen mit Unterabbildungen
@@ -63,19 +68,18 @@
 %\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm} % aus Word
 %% ---------------------------------------------------------------------------
 %% Quelltext
-%\usepackage{color}
-%\definecolor{light-gray}{gray}{0.95}
-%\usepackage{listings} 
-%\lstset{
-%	numbers=left, 
-%	numberstyle=\tiny, 
-%	breaklines=true,
-%	backgroundcolor=\color{light-gray},
-%	numbersep=5pt
-%}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.95}
+\usepackage{listings} 
+\lstset{
+	numbers=left, 
+	numberstyle=\tiny, 
+	breaklines=true,
+	backgroundcolor=\color{light-gray},
+	numbersep=5pt
+}
 %% ---------------------------------------------------------------------------
 %% Sonder Gedöns
 % Macro für die "schöne" Darstellung von C#
 \newcommand{\Csharp}{
 	{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
-%% ---------------------------------------------------------------------------
